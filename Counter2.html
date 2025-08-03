@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<h lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stylish Counter</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #333;
+    }
+
+    #count {
+      font-size: 4em;
+      color: #0077cc;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    .increment {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .decrement {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .reset {
+      background-color: #ffc107;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Stylish Counter</h1>
+  <div id="count">0</div>
+
+  <div class="buttons">
+    <button class="increment" onclick="increment()">Increment</button>
+    <button class="decrement" onclick="decrement()">Decrement</button>
+    <button class="reset" onclick="reset()">Reset</button>
+  </div>
+
+  <script>
+    let count = 0;
+
+    function updateDisplay() {
+      document.getElementById("count").textContent = count;
+    }
+
+    function increment() {
+      count++;
+      updateDisplay();
+    }
+
+    function decrement() {
+      count--;
+      updateDisplay();
+    }
+
+    function reset() {
+      count = 0;
+      updateDisplay();
+    }
+  </script>
+
+</body>
+</html>
